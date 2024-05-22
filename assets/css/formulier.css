@@ -1,0 +1,361 @@
+body {
+  background: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+    'menubalk menubalk menubalk menubalk'
+    'sidebar_left productenkolom productenkolom sidebar_right'
+    'footer footer footer footer'
+    'copyright copyright copyright copyright';
+  grid-template-columns: 10% auto auto 10%;
+  color: #fff;
+
+}
+
+.form {
+  justify-content: center;
+  margin-left: 150px;
+  margin-top: 5px;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.header {
+  background-color: rgb(0, 0, 0);
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#logo_small {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.afs:hover {
+  background-color: rgb(255, 207, 207);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.afs{
+  background-color: #EBBBB3;
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.menulink {
+  text-decoration: none;
+}
+
+.menubalk {
+  background-color: #EBBBB3;
+  grid-area: menubalk;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productenkolom {
+  background-color: rgb(255, 255, 255);
+  grid-area: productenkolom;
+  min-height: 800px;
+  display: grid;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.sidebar_left {
+  grid-area: sidebar_left;
+
+}
+
+.sidebar_left button {
+  display: block;
+}
+
+.footer {
+  background-color: rgb(255, 255, 255);
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+}
+
+
+@media (max-width: 600px) {
+  .footer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.copyright {
+  background-color: #EBBBB3;
+  grid-area: copyright;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.productenkolom .container {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #7A7D7D;
+}
+
+li {
+  float: left;
+}
+
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgb(255, 207, 207);
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EBBBB3;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(255, 207, 207);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.maak_afspraak:hover {
+  background-color: rgb(255, 207, 207);
+  color: rgb(255, 255, 255);
+}
+
+.maak_afspraak {
+  background-color: #EBBBB3;
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.contact:hover {
+  background-color: rgb(255, 207, 207);
+  color: rgb(255, 255, 255);
+}
+
+.contact {
+  background-color: #EBBBB3;
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  ;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+#logo {
+  width: 225px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+:root {
+  --crl-neon: hsl(317 100% 54%);
+  --crl-bg: #ffffff;
+  --font-size: 16px;
+}
+
+.neonbut {
+  color: var(--crl-neon);
+  font-family: "balsamiq Sans";
+  font-size: var(--font-size);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+  justify-content: center;
+  border: var(--crl-neon) 0.125em solid;
+  padding: 2px;
+  border-radius: 2px;
+  text-shadow:
+    0 0 .20em hsl(317, 100%, 75%),
+    0 0 .30em var(--crl-neon);
+  box-shadow:
+    inset 0 0 .5em var(--crl-neon),
+    0 0 .5em var(--crl-neon);
+}
+
+.neonbut::before {
+  content: "";
+  position: absolute;
+  top: 140%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 100ms linear;
+  background-color: #fff;
+}
+
+.neonbut::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--crl-neon);
+  transition: opacity 100ms linear;
+  z-index: -1;
+  opacity: 0;
+}
+
+.neonbut:hover::after {
+  opacity: 1;
+  text-shadow:
+    0 0 .20em hsl(0, 0%, 100%),
+    0 0 .30em var(--crl-neon);
+}
+
+.neonbut:hover,
+.neonbut:focus {
+  color: #fff;
+}
+
+.neonbut:hover::before {
+  opacity: 0.8;
+}
+
+*,
+*::after *::before {
+  box-sizing: border-box;
+}
+
+label.omschrijving {
+  background-color: #ffffff;
+  width: 200px;
+  display: inline-block;
+  text-align: right;
+  justify-content: center;
+  padding: 10px;
+  color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .container, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+#input {
+  background-color: #ffffff;
+  display: inline-block;
+  margin-left: 10px;
+  justify-content: center;
+  color: #000000;
+}
+
+#div {
+  text-align: center;
+  color: #000000;
+}
+
+.groot {
+  height:120px;
+}
+
+textarea {
+  vertical-align: top;
+}

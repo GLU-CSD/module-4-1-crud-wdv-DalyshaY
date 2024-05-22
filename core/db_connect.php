@@ -4,10 +4,10 @@ session_start();
 /**
  * Voor de MAC gebruikers;
  */
-$dbhost = "localhost";
+$dbhost = "localhost:8889";
 $dbuser = "root";
 $dbpass = "root";
-$dbname = "webdev_base";
+$dbname = "nagelshop";
 
 /**
  * Voor de Windows gebruikers;
@@ -24,8 +24,8 @@ if ($con -> connect_errno) {
     exit();
 }
 
-define("BASEURL","http://localhost/webdev-base/");
-define("BASEURL_CMS","http://localhost/webdev-base/admin/");
+define("BASEURL","http://localhost:8888/module4_new/");
+define("BASEURL_CMS","http://localhost:8888/module4_new/admin/");
 
 function prettyDump ( $var ) {
     echo "<pre>";

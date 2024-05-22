@@ -1,58 +1,42 @@
-<?php
-    include('core/header.php');
-?>
-<div class="row">
-    <div class="col">
-        <h1 class="text-center">WELKOM</h1>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Homepage</title>
+</head>
 
-<div class="row mb-3">
-   <div class="col">
-        <img src="https://placehold.co/1920x400.png" class="img-fluid" alt="">
-   </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <h2 class="text-center">Latest products</h2>
-    </div>
-    <div class="col-4 mb-3">
-        <div class="card w-100">
-            <img src="https://placehold.co/600x400.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">&euro; 39,99</p>
-                <a href="product.php" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
+<body class="container">
+  <?php include "header.php" ?>
+  <div class="productenkolom">
+    <section class="container">
+      <?php
+      ini_set('display_errors', 1);
+      ini_set('display_startup_errors', 1);
+      error_reporting(E_ALL);
 
-    <div class="col-4 mb-3">
-        <div class="card w-100">
-            <img src="https://placehold.co/600x400.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">&euro; 39,99</p>
-                <a href="product.php" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    
+      include "products.php";
 
-    <div class="col-4 mb-3">
-        <div class="card w-100">
-            <img src="https://placehold.co/600x400.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">&euro; 39,99</p>
-                <a href="product.php" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 text-center">
-        <a href="products.php" class="btn btn-info">SHOW ALL products</a>
-    </div>    
+      foreach ($array['products'] as $product) {
+        echo "<div class='card'>";
+        echo "<img class='card-image' src='{$product['photos'][0]}' alt='{}'/>";
+        echo "<h3>{$product['title']}</h3>";
+        echo "<div>{$product['id']}</div>";
+        echo "<div>{$product['omschrijving']}</div>";
+        echo "<div>{$product['price']}</div>";
+        echo "<a href='detail.php?id={$product['id']}' class='neon'>
+           Maak een afspraak
+         </a>";
+        echo "</div>"; 
+      }
+      ?>
+    </section>
+  </div>
+  <?php include "sidebar.php" ?>
 </div>
-<?php
-    include('core/footer.php');
-?>
+ <?php include "footer.php" ?>
+  <script src="assets/js/app.js">
+  </script>
+</body>
+</php>
